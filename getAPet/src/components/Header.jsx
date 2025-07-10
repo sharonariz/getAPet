@@ -27,7 +27,7 @@ const Header = () => {
   
   return (
     <header className="header">
-      <div className="logo">🐾 Get A Pet!</div>
+      <div className="logo">🐾 Get a Pet!</div>
 
       {/* Botón hamburguesa */}
       <button className="menu-toggle" onClick={toggleMenu}>
