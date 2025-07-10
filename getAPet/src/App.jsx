@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard.jsx'
+import Header from './components/Header.jsx';
+import Inicio from './components/Inicio.jsx'
+import Conocelos from './components/Conocelos.jsx'
+import Requisitos from './components/Requisitos.jsx'
+import Adopta from './components/Adopta.jsx'
+import Footer from './components/Footer.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+export function App (){
+    {/*Aqui se está invocando la lista de usuarios y se esta mandando la funcion a la TwitterFollowCard, para eso es necesario determinar una key que es como el ID en DB*/}
+    return (
+        <>
+      <Header />
+      <main style={{ paddingTop: '100px' }}>
+        <div className='div_inicio'>
+            <Inicio />
+        </div>
+        <div className='div_conocelos'>
+            <Conocelos />
+        </div>
+        <div className='div_requisitos'>
+            <Requisitos />
+        </div>
+        <div className='div_adopta'>
+            <Adopta />
+        </div>
+        <div className='div_footer'>
+            <Footer />
+        </div>
+      </main>
     </>
-  )
+    
+        
+    )
 }
-
-export default App

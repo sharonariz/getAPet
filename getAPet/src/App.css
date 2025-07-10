@@ -1,42 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+    margin: 10px;
+    font-family: system-ui;
+    place-content: center;
+    display:block;
+    color: #272727;
+
+}
+
+body.light {
+  background: #f0f0ff;
+}
+body.dark-mode {
+  background: #272727;
+}
+/*En la section app se agrega un margen para que en ese div de un margen global a los elementos*/
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.div_inicio {
+    display: block;
+    flex-direction:row;
+}
+
+
+ /* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    left: 1rem;
+    right: 1rem;
+    display: none; /* Oculto por defecto en móvil */
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav.active {
+    display: flex;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .toggle-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 
