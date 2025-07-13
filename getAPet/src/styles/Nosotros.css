@@ -1,0 +1,133 @@
+
+ .carrusel-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 3rem auto;
+  position: relative;
+  width: 100%;
+}
+
+.carrusel-slide {
+  width: 100%;
+  max-width: 600px;
+  height: 350px; /* Fijo para evitar colapso */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.carrusel-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Descripción encima de la imagen */
+.carrusel-descripcion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  padding: 0.8rem 1rem;
+  border-bottom-right-radius: 10px;
+  z-index: 6;
+}
+
+.carrusel-descripcion h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.carrusel-descripcion p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Botones */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.3rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #eee;
+}
+
+.btn.anterior {
+  left: 10px;
+}
+
+.btn.siguiente {
+  right: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .carrusel-descripcion {
+    font-size: 0.8rem;
+  }
+} 
+
+/**/
+/* Sobre mí */
+.about {
+  background-image: url('../src/img/fondoPatitas.png');
+  padding: 5rem 2rem;
+  margin-top: 1rem;
+  color: black;
+}
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  background: #f5f5f5;
+}
+
+.about-content .text {
+  flex: 2;
+  padding-left: 2rem;
+}
+.about-content .text h2 {
+  color: #ffa500;
+  font-size: 4rem;
+}
+.about-content .text p {
+  list-style: none;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+.about-content .text ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-content .text {
+    padding-left: 0;
+  }
+}
