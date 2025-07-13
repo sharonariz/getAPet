@@ -6,6 +6,8 @@ import { mascotas } from '../datosMoock/ListaCatalogo.jsx'
 import React, { useState } from 'react';
 import '../styles/Adopta.css';
 
+/* Esta es la página de "Catálogo", se muestra un catálogo con los animalitos disponibles filtrados por categorías. al momento de dar click en "Me interesa"
+    despliega de nuevo el botón de requisitos, que al Aceptar lo dirijirá al formulario de la página de Adopción.  */
 
 const Catalogo = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
@@ -23,7 +25,7 @@ const Catalogo = () => {
             <div className="mascota-card" key={index}>
               <img src={m.img} alt={m.nombre} />
               <div className="btn-container">
-      <button onClick={() => setMostrarModal(true)} className="btn-ver">❤️
+      <button onClick={() => setMostrarModal(true)} className="btn-ver">Me Interesa ❤️
         </button>
       </div>
               <h3>{m.nombre}</h3>
@@ -42,6 +44,7 @@ const Catalogo = () => {
               <li>📸 Enviarnos fotos semanales</li>
             </ul>
               <button onClick={() => window.location.href = "/adopta"} className="aceptar-btn">Aceptar</button>
+              <button onClick={() => setMostrarModal(false)} className="cerrar-btn">Cerrar</button>
           </div>
         </div>)}
             </div>

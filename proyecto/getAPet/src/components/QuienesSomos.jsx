@@ -4,7 +4,9 @@ import '../styles/Nosotros.css';
 import { animales } from '../datosMoock/ListaCarrusel';
 
 const Inicio = () => {
-  /*Función para el funcionamiento y automatización del carrusel 1ra sección.*/
+  {/* Sección QuienesSomos de la página de inicio.  */}
+
+  /*  Función para el funcionamiento y automatización del carrusel 1ra sección. */
   const [indiceActual, setIndiceActual] = useState(0);
 
   const siguiente = () => {
@@ -27,7 +29,7 @@ const Inicio = () => {
 
   return (
     
-    <section class="about">
+    <section className="about" id="about">
     <div class="container about-content">
         <div className="carrusel-slide">
           <img src={animal.imagen} alt={animal.nombre} className="carrusel-imagen" />

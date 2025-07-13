@@ -1,14 +1,15 @@
- // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  {/* Sección Header de todas las páginas.  */}
+
+  {/* Función para Light y Dark mode.  */}
   const [darkMode, setDarkMode] = useState(false);
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
-    // Aplica la clase dark-mode al body si darkMode es true
     if (darkMode) {
       document.body.classList.add('dark-mode');
     } else {
@@ -29,7 +30,7 @@ const Header = () => {
     <header className="header">
       <div className="logo">🐾 Get A Pet!</div>
 
-      {/* Botón hamburguesa */}
+      {/* Botón hamburguesa para móviles.   */}
       <button className="menu-toggle" onClick={toggleMenu}>
         {menuAbierto ? '✖' : '☰'}
       </button>
@@ -38,8 +39,8 @@ const Header = () => {
       <nav className={`nav ${menuAbierto ? 'activo' : ''}`}>
         <Link to="/#about">Inicio</Link>
         <Link to="/#conocelos">Conócelos</Link>
-        <a href="#requisitos">Requisitos</a>
-        <a href="#adopta">Adopta</a>
+        <Link to="/#requisitos">Requisitos</Link>
+        <Link to="/adopta">Adopta</Link>
 
         {/* Barra de búsqueda */}
         <div className="search-container">

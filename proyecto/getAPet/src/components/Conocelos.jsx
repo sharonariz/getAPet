@@ -1,4 +1,3 @@
- // src/components/Conocelos.jsx
 import { Link } from 'react-router-dom';
 import '../styles/Conocelos.css';
 import { animales } from '../datosMoock/ListaCarrusel.jsx';
@@ -7,7 +6,7 @@ import '../pages/Catalogo.jsx'
 console.log(animales);
 
 const Conocelos = () => {
-
+  {/* Sección Conocelos de la página de Inicio.  */}
   return (
     <section id="conocelos" className="conocelos">
       <h2>Conócelos</h2>
@@ -26,7 +25,7 @@ const Conocelos = () => {
         </div>
         <div className="categoria-card">
           <Link to="/catalogo/otros">
-            <img src="https://www.animalshealth.es/fileuploads/news/rvc-conejos-salud-problemas-mesa-de-trabajo-217205089601.png" alt="Otros" />
+            <img src="https://s3.animalia.bio/animals/photos/full/original/koreahamsterjpg.webp" alt="Otros" />
             <p>🐰 Otros</p>
           </Link>
         </div>
