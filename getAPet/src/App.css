@@ -1,0 +1,74 @@
+/* Estilos globales de la página. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+body {
+    margin: 10px;
+    font-family: system-ui;
+    place-content: center;
+    display:block;
+    color: #272727;
+
+}
+
+body.light {
+  background: #f0f0ff;
+}
+body.dark-mode {
+  background: #424242;
+  color: #ff6600;
+}
+/*En la section app se agrega un margen para que en ese div de un margen global a los elementos*/
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.div_inicio {
+    display: block;
+    flex-direction:row;
+}
+
+
+ /* ============ Diseño RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    left: 1rem;
+    right: 1rem;
+    display: none; /* Oculto por defecto en móvil */
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .toggle-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 

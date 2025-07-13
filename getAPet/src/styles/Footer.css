@@ -1,0 +1,38 @@
+.footer {
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.footer h3 {
+  margin-bottom: 0.5rem;
+  color: #ff6600;
+}
+
+.footer a {
+  display: block;
+  margin: 0.3rem 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+}
