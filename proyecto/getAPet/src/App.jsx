@@ -3,7 +3,7 @@ import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
-import Inicio from './components/Inicio.jsx'
+import QuienesSomos from './components/QuienesSomos.jsx'
 import Conocelos from './components/Conocelos.jsx'
 import Requisitos from './components/Requisitos.jsx'
 import Adopta from './components/Adopta.jsx'
@@ -29,7 +29,7 @@ export function App (){
         <>
         <Header />
         <main style={{ paddingTop: '100px' }}>
-            <section className='div_inicio'><Inicio /></section>
+            <section className='div_inicio'><QuienesSomos /></section>
             <section className='div_conocelos'><Conocelos /></section>
             <section className='div_requisitos'><Requisitos /></section>
             <section className='div_adopta'><Adopta /></section>

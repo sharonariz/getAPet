@@ -1,59 +1,69 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
-import { Link } from 'react-router-dom';
+import logo from '../img/LogoGetAPet-02.png'
+import logoDark from '../img/LogoDark-02.png'
 
 const Header = () => {
-  {/* Sección Header de todas las páginas.  */}
+  {/* Header de todas las páginas */}
 
-  {/* Función para Light y Dark mode.  */}
-  const [darkMode, setDarkMode] = useState(false);
-  const [menuAbierto, setMenuAbierto] = useState(false);
+  /* Barra de "Búsqueda", de momento solo se puede hacer la búsqueda por categoría */
+  const [busqueda, setBusqueda] = useState('');
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [darkMode]);
+  const handleBuscar = (e) => {
+    e.preventDefault();
+    const query = busqueda.trim().toLowerCase();
+    if (query.includes('perro')) navigate('/catalogo/perros');
+    else if (query.includes('gato')) navigate('/catalogo/gatos');
+    else if (query.includes('otro')) navigate('/catalogo/otros');
+    else alert('No se encontró ninguna categoría válida. Intenta con "perros", "gatos" u "otros".');
+    setBusqueda('');
+  };
+
+  /* Modo Dark */
+  const [darkMode, setDarkMode] = useState(
+  document.body.classList.contains('dark-mode')
+  );
 
   const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
+  const isDark = !darkMode;
+  setDarkMode(isDark);
+  document.body.classList.toggle('dark-mode', isDark);
   };
 
-  const toggleMenu = () => {
-    setMenuAbierto(!menuAbierto);
-  };
-
-  
   return (
     <header className="header">
-      <div className="logo">🐾 Get A Pet!</div>
+      <div className="logo-container">
+        <img 
+          src={darkMode ? logoDark : logo} 
+          alt="GetAPet!" 
+          className="logo-img" 
+        />
+      </div>
 
-      {/* Botón hamburguesa para móviles.   */}
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {menuAbierto ? '✖' : '☰'}
-      </button>
-
-      {/* Menú de navegación */}
-      <nav className={`nav ${menuAbierto ? 'activo' : ''}`}>
+      <nav className="nav">
         <Link to="/#about">Inicio</Link>
         <Link to="/#conocelos">Conócelos</Link>
         <Link to="/#requisitos">Requisitos</Link>
         <Link to="/adopta">Adopta</Link>
 
-        {/* Barra de búsqueda */}
-        <div className="search-container">
+        <form onSubmit={handleBuscar} className="search-container">
           <input
             type="text"
-            placeholder="Buscar..."
             className="search-input"
+            placeholder="Buscar especie..."
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
           />
-        </div>
+        </form>
       </nav>
-      <button className="toggle-btn" onClick={toggleDarkMode}>{darkMode ? '☀️' : '🌙'}</button>
+
+      <button className="toggle-btn" onClick={toggleDarkMode}>
+        {darkMode ? '☀️' : '🌙'}
+      </button>
     </header>
   );
 };
 
-export default Header; 
+export default Header;
