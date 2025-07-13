@@ -1,6 +1,7 @@
 import '../styles/Footer.css'; // Puedes mover el CSS abajo a tu archivo de estilos
 
 const Footer = () => {
+  {/* Sección Footer de todas las páginas.  */}
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -17,7 +18,7 @@ const Footer = () => {
           <a href="https://tiktok.com" target="_blank" rel="noreferrer">🎥 TikTok</a>
         </div>
       </div>
-      <p className="copyright">© 2025 Adopta una Mascota</p>
+      <p className="copyright">© 2025 GetAPet</p>
     </footer>
   );
 };

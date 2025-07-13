@@ -1,10 +1,9 @@
- // src/components/Conocelos.jsx
 import '../styles/Adopta.css';
 import CircularGallery from './CircularGallery'
 import { Link } from 'react-router-dom';
 
 const Adopta = () => {
-
+  {/* Sección Adopta de la página de Inicio con el carrusel automático importado por ReactBits.  */}
   return (
     <section id="adopta" className="adopta">
       <h2>¿Listo para adoptar?</h2>

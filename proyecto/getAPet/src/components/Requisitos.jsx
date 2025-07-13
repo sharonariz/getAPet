@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/Requisitos.css'; // Puedes mover el CSS abajo a tu archivo de estilos
+import '../styles/Requisitos.css'; 
 
 const Requisitos = () => {
+  {/* Sección Requisitos de la  página de Inicio, despliega un modal con los requisitos al dar click en Ver Requisitos.  */}
+
   const [mostrarModal, setMostrarModal] = useState(false);
 
   return (
