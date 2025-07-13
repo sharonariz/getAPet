@@ -92,6 +92,7 @@
 .about {
   background-image: url('../src/img/fondoPatitas.png');
   padding: 5rem 2rem;
+  color: black;
 }
 .about-content {
   display: flex;

@@ -6,8 +6,6 @@ import { mascotas } from '../datosMoock/ListaCatalogo.jsx'
 import React, { useState } from 'react';
 import '../styles/Adopta.css';
 
-/* Esta es la página de "Catálogo", se muestra un catálogo con los animalitos disponibles filtrados por categorías. al momento de dar click en "Me interesa"
-    despliega de nuevo el botón de requisitos, que al Aceptar lo dirijirá al formulario de la página de Adopción.  */
 
 const Catalogo = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
