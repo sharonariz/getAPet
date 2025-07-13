@@ -6,6 +6,9 @@ import logoDark from '../img/LogoDark-02.png'
 
 const Header = () => {
   {/* Header de todas las páginas */}
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
+
 
   /* Barra de "Búsqueda", de momento solo se puede hacer la búsqueda por categoría */
   const [busqueda, setBusqueda] = useState('');
@@ -41,8 +44,13 @@ const Header = () => {
           className="logo-img" 
         />
       </div>
-
-      <nav className="nav">
+      <button
+          className="menu-toggle"
+          onClick={() => setMenuAbierto(!menuAbierto)}
+        >
+          ☰
+        </button>
+      <nav className={`nav ${menuAbierto ? 'activo' : ''}`}>
         <Link to="/#about">Inicio</Link>
         <Link to="/#conocelos">Conócelos</Link>
         <Link to="/#requisitos">Requisitos</Link>
